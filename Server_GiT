@@ -1,18 +1,23 @@
 import socket
-
+sock = socket.socket()
+sock.bind(('localhost',10150))
 
 
 while True:
-    sock = socket.socket()
-    sock.connect(('localhost', 10150))
-    my_massage = input("Введите ваше сообщение: ")
-    sock.send(my_massage.encode())
-    
-    data = sock.recv(1024)
-    data = data.decode()
-    print(data)
-    sock.close()
-    if data == "CLOSE":
-        break
 
+    sock.listen(0)
+
+    conn, addr = sock.accept()
+
+
+    data = conn.recv(1024)
+    print(addr)
+    if not data:
+        continue
+    conn.send(data.upper())
+    print(data.decode())
+    if data.decode() == "close":
+        conn.close()
+
+        break
 
