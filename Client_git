@@ -1,13 +1,12 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
 import socket
 
 sock = socket.socket()
 sock.connect(('localhost', 10150))
-sock.send('hello, world!')
+
+my_massage = input("Введите ваше сообщение: ")
+sock.send(my_massage.encode())
 
 data = sock.recv(1024)
+data = data.decode()
+print(data)
 sock.close()
-
-print data
