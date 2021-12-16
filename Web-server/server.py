@@ -24,7 +24,7 @@ while 1:
       with open(getcwd()+"\\WorkDir\\index.html",'r+',encoding='utf-8') as f:
         file = f.read()
     elif get != '':
-      with open(getcwd()+"\\Workdir"+get,'r+',encoding='utf-8') as f:
+      with open(getcwd()+"\\WorkDir"+get,'r+',encoding='utf-8') as f:
         file = f.read()
     else:
       file = 'Ошибка в запросе'
