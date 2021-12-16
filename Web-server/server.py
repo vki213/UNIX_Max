@@ -21,10 +21,10 @@ while 1:
 
   try:
     if get == '/':
-      with open(getcwd()+"\\workDir\\index.html",'r+',encoding='utf-8') as f:
+      with open(getcwd()+"\\WorkDir\\index.html",'r+',encoding='utf-8') as f:
         file = f.read()
     elif get != '':
-      with open(getcwd()+"\\workdir"+get,'r+',encoding='utf-8') as f:
+      with open(getcwd()+"\\Workdir"+get,'r+',encoding='utf-8') as f:
         file = f.read()
     else:
       file = 'Ошибка в запросе'
